@@ -1,11 +1,22 @@
 ﻿// Stack.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
-#include <iostream>
+#include "Stack.h"
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	srand(time(NULL));
+	Stack ST;
+	int i = 0;
+	while (!ST.isFull()) {
+		ST.push(i);
+		i++;
+	}
+
+	while (!ST.isEmpty()) {
+		cout << ST.pop() << endl;
+	}
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
