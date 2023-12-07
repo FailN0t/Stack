@@ -16,8 +16,15 @@ int main()
 	list.printList();
 	const int n = 3;
 	int a[n]{ 1, 2, 3 };
-	cout << a[800];
-	//list[60];
+	try {
+		cout << list[6];
+	}
+	catch (exception& E) {
+		cout << E.what() << endl;
+	}
+
+	myList<int> my;
+	my.print();
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

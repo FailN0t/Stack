@@ -12,6 +12,12 @@ class List_struct {
 	int count = -1;
 
 public:
+	List_struct() {
+		for (size_t i = 0; i < count; i++)
+		{
+			addElement(3);
+		}
+	}
 	//добавление элемента
 	void addElement(T data) {
 		Node* newElement = new Node;//создаем новый динамический элемент
@@ -44,6 +50,35 @@ public:
 		if (index < 0 || index > count || count == -1) {
 			throw exception("Out of range");
 		}
-		return 0;
+		
+		for (size_t i = 0; i < index; i++)
+		{
+			move = move->next;
+		}
+		return move->data;
+	}
+private:
+	Node& operator[](int index) {
+		Node* move = Head;
+		if (index < 0 || index > count || count == -1) {
+			throw exception("Out of range");
+		}
+
+		for (size_t i = 0; i < index; i++)
+		{
+			move = move->next;
+		}
+		return move;
+	}
+	friend myList;
+};
+
+template<class T>
+class myList {
+	List_struct<T> list();
+	List_struct::Node* move2 = list[0]
+public:
+	void print() {
+		cout << move2->data << endl;
 	}
 };
