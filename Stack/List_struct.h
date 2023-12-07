@@ -57,28 +57,6 @@ public:
 		}
 		return move->data;
 	}
-private:
-	Node& operator[](int index) {
-		Node* move = Head;
-		if (index < 0 || index > count || count == -1) {
-			throw exception("Out of range");
-		}
 
-		for (size_t i = 0; i < index; i++)
-		{
-			move = move->next;
-		}
-		return move;
-	}
-	friend myList;
-};
-
-template<class T>
-class myList {
-	List_struct<T> list();
-	List_struct::Node* move2 = list[0]
-public:
-	void print() {
-		cout << move2->data << endl;
-	}
+	///Реализоваль метод(функцию) pop() , которая удаляет один элемнт с конца, в этой программе
 };
