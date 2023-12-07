@@ -1,22 +1,23 @@
 ﻿// Stack.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
-#include "Stack.h"
-
+#include "List_struct.h"
 
 int main()
 {
 	srand(time(NULL));
-	Stack ST;
-	int i = 0;
-	while (!ST.isFull()) {
-		ST.push(i);
-		i++;
+	List_struct<int> list;
+
+	for (size_t i = 0; i < 20; i++)
+	{
+		list.addElement(rand() % 9 + 1);
 	}
 
-	while (!ST.isEmpty()) {
-		cout << ST.pop() << endl;
-	}
+	list.printList();
+	const int n = 3;
+	int a[n]{ 1, 2, 3 };
+	cout << a[800];
+	//list[60];
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
