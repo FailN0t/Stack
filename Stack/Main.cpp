@@ -14,8 +14,6 @@ int main()
 	}
 
 	list.printList();
-	const int n = 3;
-	int a[n]{ 1, 2, 3 };
 	try {
 		cout << list[6];
 	}
@@ -23,8 +21,6 @@ int main()
 		cout << E.what() << endl;
 	}
 
-	myList<int> my;
-	my.print();
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
